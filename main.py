@@ -45,9 +45,9 @@ class Pracownik:
         r_lacznykoszt = round(lacznykoszt, 2)
         return r_lacznykoszt
 
-liczba_pracownikow = input()
+liczba_pracownikow = input().strip()
 n = int(liczba_pracownikow)
-lista_pracownikow_razem = [input() for pracownik in range(n)]
+lista_pracownikow_razem = [input().strip() for pracownik in range(n)]
 splitter = []
 liczLacznyKoszt = 0
 for pracownikInput in lista_pracownikow_razem:
