@@ -19,18 +19,26 @@ class Pracownik:
         b = self.wynagrodzenie_brutto
         c = 0.0976 * b + 0.015 * b + 0.0245 * b
         r_c = round(c, 2)
-        e = 0.09 * (b - r_c)
+        d = b -r_c
+        r_d = round(d, 2)
+        e = 0.09 * r_d
         r_e = round(e, 2)
-        j = 0.18 * (b - 111.25 - c) - 0.0775 * (b - c)
-        r_j = round(j, 2)
+        g = 111.25
+        h = b - g - c
+        r_h = round(h, 0)
+        i = r_h*0.18 - 46.33
+        r_i = round(i, 2)
+        f = r_d*0.0775
+        r_f = round(f,2)
+        j = r_i - r_f
+        r_j = round(j, 0)
         wynagrodzenie_netto = b - r_c - r_e - r_j
         r_wynagrodzenie_netto = round(wynagrodzenie_netto, 2)
         return r_wynagrodzenie_netto
 
     def oblicz_skladki(self):
         brutto = self.wynagrodzenie_brutto
-        r_brutto = round(brutto, 2)
-        skladki = 0.0976 * r_brutto + 0.065 * r_brutto + 0.0193 * r_brutto + 0.0245 * r_brutto + 0.01 * r_brutto
+        skladki = 0.0976 * brutto + 0.065 * brutto + 0.0193 * brutto + 0.0245 * brutto + 0.001 * brutto
         r_skladki = round(skladki, 2)
         return r_skladki
 
@@ -52,3 +60,6 @@ for pracownikInput in lista_pracownikow_razem:
     liczLacznyKoszt += pracownik.laczny_koszt_pracodawcy_na_pracownika()
 
 print(liczLacznyKoszt)
+
+
+
