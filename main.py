@@ -16,7 +16,7 @@ class Pracownik:
               + str(f'{self.laczny_koszt_pracodawcy_na_pracownika():.2f}'))
 
     def oblicz_wyplata_netto(self):
-        b = self.wynagrodzenie_brutto
+        b = round(self.wynagrodzenie_brutto,2)
         c = round(0.0976 * b, 2) + round(0.015 * b, 2) + round(0.0245 * b, 2)
         r_c = round(c, 2)
         d = b - r_c
@@ -36,7 +36,7 @@ class Pracownik:
         return r_wynagrodzenie_netto
 
     def oblicz_skladki(self):
-        brutto = self.wynagrodzenie_brutto
+        brutto = round(self.wynagrodzenie_brutto,2)
         skladki = round(0.0976 * brutto, 2) + round(0.065 * brutto, 2) + round(0.0193 * brutto, 2) + round(0.0245 * brutto, 2) + round(0.001 * brutto, 2)
         return skladki
 
